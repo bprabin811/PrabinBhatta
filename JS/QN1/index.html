@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>My DOM-Based Library</title>
+  </head>
+  <body>
+    <div id="my-element" class="old-class" data-id="123">
+      This element has a class and a data set.
+    </div>
+    <input id="my-input" type="text" value="Initial value" />
+    <script src="app.js"></script>
+    <script>
+      // Use the library to change the class name of the div element
+      MyLibrary.changeClass(document.getElementById("my-element"), "new-class-changed");
+
+      // Use the library to get the data set of the div element
+      const dataSet = MyLibrary.getDataSet(document.getElementById("my-element"));
+      console.log(dataSet);
+
+      // Use the library to inject a new div element into the body
+      MyLibrary.injectElement("div", "new-element", document.body);
+
+      // Use the library to make a GET request to a URL
+      MyLibrary.makeRequest("http://example.com", "GET", response => {
+        console.log(response);
+      });
+
+      // Use the library to get the value of the input element
+      const input = document.getElementById("my-input");
+      const inputValue = MyLibrary.getInputValue(input);
+      console.log(inputValue);
+
+      // Use the library to set the value of the input element
+      MyLibrary.setInputValue(input, "new value");
+    </script>
+  </body>
+</html>
